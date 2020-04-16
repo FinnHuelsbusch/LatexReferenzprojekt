@@ -1,0 +1,175 @@
+\documentclass[
+fontsize=12pt,          	 % Leitlinien sprechen von Schriftgröße 12.
+paper=A4,
+twoside=false,
+listof=totoc,            		% Tabellen- und Abbildungsverzeichnis ins Inhaltsverzeichnis
+index=totoc,				  %Stichwortverzeichnis wird in das Inhaltsverzeichniss aufgenommen
+bibliography=totoc,		  % Literaturverzeichnis ins Inhaltsverzeichnis aufnehmen
+titlepage,               % Titlepage-Umgebung anstatt \maketitle
+headsepline,             % horizontale Linie unter Kolumnentitel
+abstracton,              % Überschrift einschalten, Abstract muss in {abstract}-Umgebung stehen
+ngerman
+]{scrreprt}                  % Verwendung von KOMA-Report
+
+\usepackage[onehalfspacing]{setspace}        % Zeilenabstand \singlespacing, \onehalfspaceing, \doublespacing
+\usepackage{scrlayer-scrpage} 	   % Gestaltung von Fuß- und Kopfzeilen
+
+\usepackage{titletoc}          			  % Anpassungen am Inhaltsverzeichnis
+\contentsmargin{0.75cm}       		  % Abstand im Inhaltsverzeichnis zw. Punkt und Seitenzahl
+
+% Paket für Quellen
+\usepackage[
+backend = biber,                % Verweis auf biber
+language = auto,
+style = numeric,                % Nummerierung der Quellen mit Zahlen
+sorting = none,                 % none = Sortierung nach der Erscheinung im Dokument
+sortcites = true,               % Sortiert die Quellen innerhalb eines cite-Befehls
+block = space,                  % Extra Leerzeichen zwischen Blocks
+hyperref = true,                % Links sind klickbar auch in der Quelle
+%backref = true,                % Referenz, auf den Text an die zitierte Stelle
+bibencoding = auto,
+giveninits = true,              % Vornamen werden abgekürzt
+doi=false,                      % DOI nicht anzeigen
+isbn=false,                     % ISBN nicht anzeigen
+alldates=short                  % Datum immer als DD.MM.YYYY anzeigen
+]{biblatex}
+\addbibresource{content/sources.bib}
+\setcounter{biburlnumpenalty}{3000}     % Umbruchgrenze für Zahlen
+\setcounter{biburlucpenalty}{6000}      % Umbruchgrenze für Großbuchstaben
+\setcounter{biburllcpenalty}{9000}      % Umbruchgrenze für Kleinbuchstaben
+\DeclareNameAlias{default}{family-given}  % Nachname vor dem Vornamen
+\AtBeginBibliography{\renewcommand{\multinamedelim}{\addslash\space
+	}\renewcommand{\finalnamedelim}{\multinamedelim}}  % Schrägstrich zwischen den Autorennamen
+\DefineBibliographyStrings{german}{
+	urlseen = {Einsichtnahme:},                      % Ändern des Titels von "besucht am"
+}
+\usepackage[babel,german=quotes]{csquotes}         % Deutsche Anführungszeichen + Zitate
+
+
+% Unterstützung für Deutsch einbinden
+\usepackage[ngerman]{babel}
+
+% Pakete für die Darstellung von mathematischen Symbolen und Eingabemöglichkeit von Umlauten
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[activate]{microtype}       % Trennung von Wörtern wird besser umgesetzt
+\usepackage{lmodern}         % Nicht-gerasterte Schriftarten (bei MikTeX erforderlich)
+
+% Pakete für Mathematik
+\usepackage[sumlimits, intlimits]{amsmath}  % Bei Integralen und Summen werden die Zahlen oben drüber geschrieben 
+\usepackage{amsmath}    % Erweiterung vom Mathe-Satz
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{MnSymbol}   % Für Symbole, die in amssymb nicht enthalten sind.
+\usepackage{array}
+\usepackage{float}
+\usepackage{mathtools}
+\usepackage{mathrsfs}
+
+% Pakete für Abkürzungen
+\usepackage[printonlyused]{acronym}	%Abkürzungen werden nur gedruckt wenn sie gebraucht wurden
+
+% Pakete für Tabellen
+\usepackage{booktabs}  % Für schönere Tabellen. Enthält neue Befehle wie \midrule
+\usepackage{multirow}  % Mehrzeilige Tabellen
+\usepackage{siunitx}   % Für SI Einheiten und das Ausrichten Nachkommastellen
+\sisetup{locale=DE, range-phrase={~bis~}, output-decimal-marker={,}} % Damit ein Komma und kein Punkt verwendet wird.
+\usepackage{xfrac} % Für siunitx Option "fraction-function=\sfrac"
+\setlength{\tabcolsep}{10pt}					% Abstand des Inhalts zur Linie
+\renewcommand{\arraystretch}{1.25}		%Abstand der Zeilen wird erhöht 1.0 ist default
+
+% Pakete für Bilder
+\usepackage{wrapfig}
+\usepackage{graphicx}
+\usepackage{caption}
+
+% Pakete für Definitionsboxen
+\usepackage{amsthm}                     % Liefert die Grundlagen für Theoreme
+\usepackage[framemethod=tikz]{mdframed} % Boxen für die Umrandung
+\input{content/00_LateX/highlightBoxes}  % Weitere Details sind ausgelagert
+
+% Pakete Für Todo Notes
+\usepackage{todonotes}
+\setlength {\marginparwidth }{2cm}      % Abstand für Todo Notizen
+
+% Pakete für Aufzählungen
+\usepackage{enumitem}
+
+% Pakete für Referenzen
+\usepackage{varioref}
+\usepackage[                        % Klickbare Links (enth. auch "nameref", "url" Package)
+hidelinks,                    			 % Blende die "URL Boxen" aus.
+breaklinks=true              	    % Breche zu lange URLs am Zeilenende um
+]{hyperref}
+
+\hypersetup{%
+	linktocpage=true, 		% Nicht der Text sondern die Seitenzahlen in Verzeichnissen klickbar
+	bookmarksnumbered=true 	% Überschriftsnummerierung im PDF Inhalt anzeigen.
+}
+\usepackage[noabbrev]{cleveref}   %Kein erkennen von Abkürzungen 
+
+% Quellcodevorlage
+\usepackage{scrhack}                    % Hack zur Verw. von listings in KOMA-Script
+\usepackage{listings}                   % Darstellung von Quellcode
+\usepackage{xcolor}                     % Einfache Verwendung von Farben
+\input{content/00_LateX/sourceCodeStyle}  % Weitere Details sind ausgelagert
+\usepackage{algorithm}                  % Für Algorithmen-Umgebung (ähnlich wie lstlistings Umgebung)
+\usepackage{algpseudocode}              % Für Pseudocode. Füge "[noend]" hinzu, wenn du kein "endif",
+% etc. haben willst.
+\makeatletter                           % Sorgt dafür, dass man @ in Namen verwenden kann.
+% Ansonsten gibt es in der nächsten Zeile einen Compilefehler.
+\renewcommand{\ALG@name}{Algorithmus}   % Umbenennen von "Algorithm" im Header der Listings.
+\makeatother                            % Zeichen wieder zurücksetzen
+\renewcommand{\lstlistingname}{Listing} % Erlaubt das Umbenennen von "Listing" in anderen Titel.
+
+% Anhänge werden sortiert
+\usepackage[titletoc]{appendix} %Fügt "Anhang" in TOC ein. 
+
+% Paket für ein Stichwortverzeichnis
+\usepackage{makeidx}
+\makeindex
+
+% Nur ein latex-Durchlauf für die Aktualisierung von Verzeichnissen nötig
+\usepackage{bookmark} 
+
+% Zeilenumbruch, Seitenränder und mehr
+\usepackage[
+%showframe,                % Ränder anzeigen lassen
+left=2.7cm, right=2.5cm,
+top=2.5cm,  bottom=2.5cm,
+includeheadfoot
+]{geometry}                 
+
+% Schriftart wird geändert
+\usepackage{lmodern}
+\renewcommand*\familydefault{\sfdefault} 				%Serifenlose Schrift 
+
+%Unterüberschriften 
+\usepackage[list=true]{subcaption} %Unterbilder werden im Abbildungsverzeichniss dargestellt 
+
+
+% Bildunterschriften werden etwas kleiner dargestellt
+\addtokomafont{caption}{\small}
+
+\addto\extrasngerman{%
+	\def\equationautorefname~#1\null{Gleichung~(#1)\null}
+	\def\lstnumberautorefname{Zeile}
+	\def\lstlistingautorefname{Listing}
+	\def\algorithmautorefname{Algorithmus}
+	% Damit einheitlich "Abschnitt 1.2[.3]" verwendet wird und nicht "Unterabschnitt 1.2.3"
+	% \def\subsectionautorefname{Abschnitt}
+}
+
+% ---- Abstand verkleinern von der Überschrift 
+\renewcommand*{\chapterheadstartvskip}{\vspace*{.5\baselineskip}}
+
+% Einzelne Wörter
+\widowpenalty10000
+\clubpenalty10000
+
+% Paket für Blindtext
+\usepackage{lipsum}
+
+% Layout für die Absätze
+\setlength{\parindent} {0.0em}
+\setlength{\parskip} {1.5ex plus0.5ex minus0.5ex}   % Setzt den Abstand zwischen 2 Absätzen 
