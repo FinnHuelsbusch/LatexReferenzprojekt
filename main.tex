@@ -34,7 +34,7 @@
 %Optionen 
 \setboolean{durchgehendeFussnoten}{true}
 \setboolean{sperrvermerkLangeVersion}{true}
-\setboolean{abgabeVersion}{false} 			% todos werden ausgeblendet 
+\setboolean{abgabeVersion}{true} 			% todos und instruktionen werden ausgeblendet
 \input{content/00_LaTeX/runVariables}
 
 % Kopf- und Fußzeilen werden eingelesen
@@ -89,13 +89,18 @@
     \renewcommand*{\chapterpagestyle}{scrheadings}
     \pagestyle{scrheadings}
    	\onehalfspacing
-   	\sffamily                               												 % Serifenlose Schrift verwenden.
-   	\include{content/06_chapter/01_einleitung}
-   	\include{content/06_chapter/02_abbildungen}
-   	\include{content/06_chapter/03_formatText}
-   	\include{content/06_chapter/04_mathematische-formeln}
-   	\include{content/06_chapter/05_quellcode}
-   	\include{content/06_chapter/06_literaturHinweis}
+	\sffamily                               												 % Serifenlose Schrift verwenden. 
+	   
+	\ifthenelse{\boolean{abgabeVersion}}
+	{}
+	{
+   	\include{content/08_instructions/01_einleitung}
+   	\include{content/08_instructions/02_abbildungen}
+   	\include{content/08_instructions/03_formatText}
+   	\include{content/08_instructions/04_mathematische-formeln}
+   	\include{content/08_instructions/05_quellcode}
+	\include{content/08_instructions/06_literaturHinweis}
+	}
 	
 	% Einbinden des Literaturverzeichnisses 
 	\cleardoublepage
