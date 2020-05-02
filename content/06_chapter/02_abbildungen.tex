@@ -13,7 +13,7 @@ Die Legende steht bei den Tabellen darüber, während diese bei anderen Grafiken
 		\toprule
 		\textbf{linke Spalte} & \textbf{mittlere Spalte} & \textbf{rechte Spalte} \\
 		\midrule
-		A & B & C \\
+		A & \makecell{Dies ist ein \\ Umbruch} & C \\
 		! & 2 & 3 \\
 		a & b & c \\
 		i & ii & iii \\
@@ -25,6 +25,8 @@ Die Legende steht bei den Tabellen darüber, während diese bei anderen Grafiken
 Bitte beachte auch, dass \LaTeX{} deine Tabellen an eine andere Position verschiebt, wenn diese dort besser aussehen. Vermeide deshalb Textpassagen wie beispielsweise \enquote{in der nachfolgenden Tabelle/Grafik}, denn es könnte sein, dass die Tabelle vor den Text rutscht. Nutze deshalb immer Verweise wie: \enquote{in der Tabelle \ref{tabelle:Zahlenausrichtung} ist \dots }!
 
 Die Tabelle \ref{tabelle:Zahlenausrichtung} nutzt mehrere Packages. Mithilfe des Befehls \texttt{\textbackslash midrule} aus dem Package \enquote{booktabs} erstellt man eine horizontale Linie, die die vertikalen unterbricht. Diese sorgt für ein schöneres Schriftbild. Möchtest du Zahlen auflisten, so kannst du diese nach dem Dezimalkomma ausrichten. Dies geht mit dem Package \enquote{siunitx}.
+
+Mit dem Befehl \texttt{makecell} kann eine einzelne Zelle in einer Tabelle nach durch einen normalen Umbruch umgebrochen werden.
 
 \begin{table}[ht]
 	\centering
