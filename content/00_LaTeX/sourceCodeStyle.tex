@@ -164,3 +164,28 @@
 	keywordstyle=[2]\color{CDSFunc}
 }
 
+
+% ---- Eigener XSD-Style für den Quellcode
+\renewcommand{\ttdefault}{pcr}
+\lstdefinestyle{EigenerXSDStyle}{
+	language=XML,                     
+	stringstyle=\color{JavaGruen},
+	morekeywords={
+		encoding,
+		xs:schema,
+		xs:element,
+		xs:complexType,
+		xs:sequence,
+		xs:attribute,
+		xs:simpleContent,
+		xs:extension base, 
+		encoding,
+		schema,
+		element,
+		complexType,
+		sequence,
+		attribute,
+		simpleContent,
+		extension base
+	}
+}
