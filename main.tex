@@ -2,7 +2,7 @@
 \input{content/00_LaTeX/preamble}
 
 % Änderungen an Schreibweisen und Silbentrennungen
-\input{content/00_LaTeX/grammar}
+\input{content/00_LaTeX/apperance/grammar}
 
 % Allgemeine Informationen zur Arbeit
 \newcommand{\titel}{Beispieltitel, welcher am Besten über zwei Zeilen verläuft}
@@ -35,7 +35,7 @@
 \setboolean{durchgehendeFussnoten}{true}
 \setboolean{sperrvermerkLangeVersion}{true}
 \setboolean{abgabeVersion}{false} 			% todos und instruktionen werden ausgeblendet
-\input{content/00_LaTeX/runVariables}
+\input{content/00_LaTeX/variables/runVariables}
 
 % Glossar wird initialisiert
 \makeglossaries
@@ -43,7 +43,7 @@
 
 
 % Kopf- und Fußzeilen werden eingelesen
-\input{content/00_LaTeX/headerAndFooter}
+\input{content/00_LaTeX/apperance/headerAndFooter}
 
 \begin{document}
 	\setlength{\parindent}{0pt}              	% Keine Paragraphen Einrückung.
@@ -99,12 +99,12 @@
 	\ifthenelse{\boolean{abgabeVersion}}
 	{}
 	{
-   	\include{content/08_instructions/01_einleitung}
-   	\include{content/08_instructions/02_abbildungen}
-   	\include{content/08_instructions/03_formatText}
-   	\include{content/08_instructions/04_mathematische-formeln}
-   	\include{content/08_instructions/05_quellcode}
-	\include{content/08_instructions/06_literaturHinweis}
+		\include{content/00_LaTeX/exampleProject/01_einleitung}
+		\include{content/00_LaTeX/exampleProject/02_abbildungen}
+		\include{content/00_LaTeX/exampleProject/03_formatText}
+		\include{content/00_LaTeX/exampleProject/04_mathematische-formeln}
+		\include{content/00_LaTeX/exampleProject/05_quellcode}
+		\include{content/00_LaTeX/exampleProject/06_literaturHinweis}
 	}
 	
 	% Einbinden des Literaturverzeichnisses 
@@ -120,7 +120,11 @@
 
     % Einbinden von Anhängen
     \begin{appendices}
-    	\include{content/07_appendix/index}
-    	\include{content/06_chapter/07_Appendix}
+		\include{content/07_appendix/index}
+	\ifthenelse{\boolean{abgabeVersion}}
+	{}
+	{
+		\include{content/00_LaTeX/exampleProject/07_Appendix}
+	} 	
     \end{appendices}
 \end{document}
