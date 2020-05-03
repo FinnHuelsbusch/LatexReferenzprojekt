@@ -37,6 +37,11 @@
 \setboolean{abgabeVersion}{false} 			% todos und instruktionen werden ausgeblendet
 \input{content/00_LaTeX/runVariables}
 
+% Glossar wird initialisiert
+\makeglossaries
+\input{content/07_appendix/glossary}
+
+
 % Kopf- und Fußzeilen werden eingelesen
 \input{content/00_LaTeX/headerAndFooter}
 
@@ -110,6 +115,9 @@
 	\setcounter{page}{\numexpr\value{savepage}+1}
 	\printbibliography[title=Literaturverzeichnis]
 	
+	% Einbinden des Glossars
+	\printglossary[style=altlist,title=Glossar]
+
     % Einbinden von Anhängen
     \begin{appendices}
     	\include{content/07_appendix/index}
