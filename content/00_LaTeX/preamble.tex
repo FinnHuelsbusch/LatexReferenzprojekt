@@ -8,7 +8,8 @@ bibliography=totoc,		  % Literaturverzeichnis ins Inhaltsverzeichnis aufnehmen
 titlepage,               % Titlepage-Umgebung anstatt \maketitle
 headsepline,             % horizontale Linie unter Kolumnentitel
 abstracton,              % Überschrift einschalten, Abstract muss in {abstract}-Umgebung stehen
-ngerman
+ngerman, 
+english
 ]{scrreprt}                  % Verwendung von KOMA-Report
 
 \usepackage[onehalfspacing]{setspace}        % Zeilenabstand \singlespacing, \onehalfspaceing, \doublespacing
@@ -45,7 +46,7 @@ alldates=short                  % Datum immer als DD.MM.YYYY anzeigen
 }
 
 % Unterstützung für Deutsch einbinden
-\usepackage[ngerman]{babel}
+\usepackage[main = ngerman, english]{babel}
 
 % Pakete für die Darstellung von mathematischen Symbolen und Eingabemöglichkeit von Umlauten
 \usepackage[T1]{fontenc}
@@ -187,3 +188,8 @@ includeheadfoot
 
 % Standardpfad für Bilder wird angepasst, sodass nur noch der Dateiname des Bildes angegeben werden muss.
 \graphicspath{{images/}}
+
+% Neue Überschrift für das Literaturverzeichnis auf Deutsch
+\renewcaptionname{ngerman}{\bibname}{Literaturverzeichnis}
+\newcaptionname{ngerman}{\lstlistlistingname}{Quellcodeverzeichnis}
+\newcaptionname{english}{\lstlistlistingname}{List of Listings}

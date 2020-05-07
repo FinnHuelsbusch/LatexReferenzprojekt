@@ -35,6 +35,7 @@
 \setboolean{durchgehendeFussnoten}{true}
 \setboolean{sperrvermerkLangeVersion}{true}
 \setboolean{abgabeVersion}{false} 			% todos und instruktionen werden ausgeblendet
+\setboolean{englischeVersion}{true}
 \input{content/00_LaTeX/variables/runVariables}
 
 % Glossar wird initialisiert
@@ -46,6 +47,11 @@
 \input{content/00_LaTeX/apperance/headerAndFooter}
 
 \begin{document}
+	\ifthenelse{\boolean{englischeVersion}}
+	{
+		\selectlanguage{english}
+	}{}
+
 	\setlength{\parindent}{0pt}              	% Keine Paragraphen Einrückung.
 	\setcounter{secnumdepth}{2}             % Nummerierungstiefe fürs Inhaltsverzeichnis
 	\setcounter{tocdepth}{1}             	    % Tiefe des Inhaltsverzeichnisses. Ggf. so anpassen, dass das Verzeichnis auf eine Seite passt.
@@ -79,7 +85,6 @@
 	\include{content/05_lists/acronym}
 	\listoffigures                         													 % Erzeugen des Abbildungsverzeichnisses 
 	\listoftables                          													 % Erzeugen des Tabellenverzeichnisses
-    \renewcommand{\lstlistlistingname}{Quellcodeverzeichnis}
     \lstlistoflistings                     													 % Erzeugen des Listenverzeichnisses
     \setcounter{savepage}{\value{page}}
 
@@ -113,7 +118,7 @@
 	\pagestyle{plain}
 	\pagenumbering{Roman}                   % Römische Seitenzahlen
 	\setcounter{page}{\numexpr\value{savepage}+1}
-	\printbibliography[title=Literaturverzeichnis]
+	\printbibliography
 	
 	% Einbinden des Glossars
 	\printglossary[style=altlist,title=Glossar]
