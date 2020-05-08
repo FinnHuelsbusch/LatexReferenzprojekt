@@ -67,8 +67,9 @@ alldates=short                  % Datum immer als DD.MM.YYYY anzeigen
 \usepackage{mathrsfs}
 
 % Pakete für Abkürzungen
+\usepackage{longtable,siunitx, array}
 \usepackage{acro}	%Abkürzungen werden nur gedruckt wenn sie gebraucht wurden
-\acsetup{ list/display = used, list/sort = true}
+\acsetup{ list/display = used, list/sort = true, list/template = table}
 \input{content/05_lists/formular}
 \input{content/05_lists/acronym}
 
@@ -191,4 +192,4 @@ includeheadfoot
 % Standardpfad für Bilder wird angepasst, sodass nur noch der Dateiname des Bildes angegeben werden muss.
 \graphicspath{{images/}}
 
-\usepackage{longtable,siunitx}
+
