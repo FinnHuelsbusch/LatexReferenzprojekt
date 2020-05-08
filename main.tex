@@ -75,8 +75,13 @@
 	% Verzeichnisse
 	\renewcommand*{\chapterpagestyle}{plain}
 	\pagestyle{plain}
+	\acsetup{ list/display = used }
 	\include{content/05_lists/formular}
+	\printacronyms[template=physics, include=physics, name=Formelverzeichnis]
 	\include{content/05_lists/acronym}
+	\acsetup{ list/display = used }
+	\printacronyms[exclude=physics, name=Abkürzungsverzeichnis]
+
 	\listoffigures                         													 % Erzeugen des Abbildungsverzeichnisses 
 	\listoftables                          													 % Erzeugen des Tabellenverzeichnisses
     \renewcommand{\lstlistlistingname}{Quellcodeverzeichnis}
