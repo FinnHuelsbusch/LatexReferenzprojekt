@@ -45,6 +45,10 @@
 % Kopf- und Fußzeilen werden eingelesen
 \input{content/00_LaTeX/apperance/headerAndFooter}
 
+\acsetup{ list/display = used }
+\input{content/05_lists/formular}
+\include{content/05_lists/acronym}
+
 \begin{document}
 	\setlength{\parindent}{0pt}              	% Keine Paragraphen Einrückung.
 	\setcounter{secnumdepth}{2}             % Nummerierungstiefe fürs Inhaltsverzeichnis
@@ -75,11 +79,7 @@
 	% Verzeichnisse
 	\renewcommand*{\chapterpagestyle}{plain}
 	\pagestyle{plain}
-	\acsetup{ list/display = used }
-	\include{content/05_lists/formular}
 	\printacronyms[template=physics, include=physics, name=Formelverzeichnis]
-	\include{content/05_lists/acronym}
-	\acsetup{ list/display = used }
 	\printacronyms[exclude=physics, name=Abkürzungsverzeichnis]
 
 	\listoffigures                         													 % Erzeugen des Abbildungsverzeichnisses 
