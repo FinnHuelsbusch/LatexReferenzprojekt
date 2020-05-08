@@ -68,7 +68,11 @@ alldates=short                  % Datum immer als DD.MM.YYYY anzeigen
 \usepackage{mathrsfs}
 
 % Pakete für Abkürzungen
-\usepackage[printonlyused]{acronym}	%Abkürzungen werden nur gedruckt wenn sie gebraucht wurden
+\usepackage{longtable,siunitx, array}
+\usepackage{acro}	%Abkürzungen werden nur gedruckt wenn sie gebraucht wurden
+\acsetup{ list/display = used, list/sort = true, list/template = table}
+\input{content/05_lists/formular}
+\input{content/05_lists/acronym}
 
 % Pakete für Tabellen
 \usepackage{booktabs}  % Für schönere Tabellen. Enthält neue Befehle wie \midrule
