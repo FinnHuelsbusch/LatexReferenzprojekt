@@ -41,7 +41,6 @@
 \makeglossaries
 \input{content/07_appendix/glossary}
 
-
 % Kopf- und Fußzeilen werden eingelesen
 \input{content/00_LaTeX/apperance/headerAndFooter}
 
@@ -75,8 +74,9 @@
 	% Verzeichnisse
 	\renewcommand*{\chapterpagestyle}{plain}
 	\pagestyle{plain}
-	\include{content/05_lists/formular}
-	\include{content/05_lists/acronym}
+	\printacronyms[template=physics, include=physics, name=Formelverzeichnis]
+	\printacronyms[template=physics, exclude=physics, name=Abkürzungsverzeichnis]
+
 	\listoffigures                         													 % Erzeugen des Abbildungsverzeichnisses 
 	\listoftables                          													 % Erzeugen des Tabellenverzeichnisses
     \renewcommand{\lstlistlistingname}{Quellcodeverzeichnis}
