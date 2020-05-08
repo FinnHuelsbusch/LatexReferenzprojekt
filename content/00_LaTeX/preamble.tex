@@ -68,9 +68,9 @@ alldates=short                  % Datum immer als DD.MM.YYYY anzeigen
 
 % Pakete für Abkürzungen
 \usepackage{acro}	%Abkürzungen werden nur gedruckt wenn sie gebraucht wurden
-\acsetup{ list/display = used, pages/display = none }
+\acsetup{ list/display = used, list/sort = true}
 \input{content/05_lists/formular}
-\include{content/05_lists/acronym}
+\input{content/05_lists/acronym}
 
 % Pakete für Tabellen
 \usepackage{booktabs}  % Für schönere Tabellen. Enthält neue Befehle wie \midrule
@@ -190,7 +190,5 @@ includeheadfoot
 
 % Standardpfad für Bilder wird angepasst, sodass nur noch der Dateiname des Bildes angegeben werden muss.
 \graphicspath{{images/}}
-
-\acsetup{ list/display = all , pages/display = all}
 
 \usepackage{longtable,siunitx}
