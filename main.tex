@@ -1,15 +1,25 @@
-% Präambel mit Angaben zum Dokument
+% Current file is main.tex
+
+%------------------------------------------------------------------------%
+% Vorlage für Praxisarbeiten (o. Ä.) an der DHBW
+%
+% Autoren: Max Hüslbusch, Daniel Kerger
+% Version: 1.0.0
+% Datum:   09.05.2020
+%------------------------------------------------------------------------%
+
+% -- Präambel mit Angaben zum Dokument
 \input{content/00_LaTeX/preamble}
 
-% Änderungen an Schreibweisen und Silbentrennungen
+% -- Änderungen an Schreibweisen und Silbentrennungen
 \input{content/00_LaTeX/miscellaneous/grammar}
 
-% Allgemeine Informationen zur Arbeit
+% -- Allgemeine Informationen zur Arbeit
 \newcommand{\titel}{Beispieltitel, welcher am Besten über zwei Zeilen verläuft}
 \newcommand{\titelheader}{Titel welcher im Header auftaucht}
 \newcommand{\arbeit}{Projektarbeit 1 (T1\_1000)}
 
-% Persönliche Angaben und DHBW
+% -- Persönliche Angaben und DHBW
 \newcommand{\vorname}{Max}
 \newcommand{\nachname}{Mustermann}
 \newcommand{\matrikelnr}{1234567}
@@ -19,84 +29,84 @@
 \newcommand{\abschluss}{Bachelor of Muster}
 \newcommand{\betreuerDhbw}{DH-Vorname DH-Nachname}
 
-% Angaben zum Zeitraum
+% -- Angaben zum Zeitraum
 \newcommand{\bearbeitungsmonat}{Februar 2020}
 \newcommand{\abgabeOrt}{Musterort}
 \newcommand{\abgabeDatum}{08. September 2020}
 \newcommand{\bearbeitungszeitraum}{24.03.2020 - 08.09.2020}
 
-% Angaben zu der Ausbildungsfirma
+% -- Angaben zu der Ausbildungsfirma
 \newcommand{\firmaName}{Musterfirma}
 \newcommand{\firmaStrasse}{Musterstraße 4711}
 \newcommand{\firmaPlz}{00000 Musterort, Deutschland}
 \newcommand{\betreuerFirma}{B-Vorname B-Nachname}
 
-%Optionen 
+% -- Zusätzliche Optionen 
 \setboolean{durchgehendeFussnoten}{true}
 \setboolean{sperrvermerkLangeVersion}{true}
 \setboolean{abgabeVersion}{false} 			% todos und instruktionen werden ausgeblendet
 \input{content/00_LaTeX/variables/runVariables}
 
-% Glossar wird initialisiert
+% -- Glossar wird initialisiert
 \makeglossaries
 \input{content/07_appendix/glossary}
 
-% Kopf- und Fußzeilen werden eingelesen
+% -- Kopf- und Fußzeilen werden eingelesen
 \input{content/00_LaTeX/miscellaneous/headerAndFooter}
 
 \begin{document}
 	\setlength{\parindent}{0pt}              	% Keine Paragraphen Einrückung.
-	\setcounter{secnumdepth}{2}             % Nummerierungstiefe fürs Inhaltsverzeichnis
+	\setcounter{secnumdepth}{2}             	% Nummerierungstiefe fürs Inhaltsverzeichnis
 	\setcounter{tocdepth}{1}             	    % Tiefe des Inhaltsverzeichnisses. Ggf. so anpassen, dass das Verzeichnis auf eine Seite passt.
-	\sffamily                                				% Serifenlose Schrift verwenden.
+	\sffamily                                	% Serifenlose Schrift verwenden.
 	
-	% Einbinden des Deckblatts
-	\singlespacing
+	% -- Einbinden des Deckblatts
+	\singlespacing								% Einfacher Zeilenabstand
     \include{content/01_titlepage/titlepage}
-    \newcounter{savepage}
-    \pagenumbering{Roman} % Seitenzahlen werden durch römische Buchstaben gekennzeichnet
-    \onehalfspacing
+    \newcounter{savepage}						% Zähler für die römischen Zahlen wird erstellt.
+    \pagenumbering{Roman} 						% Seitenzahlen werden durch römische Buchstaben gekennzeichnet
+    \onehalfspacing								% Eineinhalbfacher Zeilenabstand
     
-      % Einbinden der Erklärung
+    % -- Einbinden der Erklärung
     \include{content/02_declaration/declaration}
     
-    % Einbinden des Sperrvermerks
+    % -- Einbinden des Sperrvermerks
     \include{content/03_confidentialityStatement/confidentialityStatement}
     
-     % Einbinden des Abstracts
+    % -- Einbinden des Abstracts
     \include{content/04_abstract/abstract-de}
     \include{content/04_abstract/abstract-en}
     
-    % Inhaltsverzeichnis
-    \singlespacing
-    \tableofcontents
+    % -- Inhaltsverzeichnis
+    \singlespacing													% Einfacher Zeilenabstand
+    \tableofcontents												% Inhaltsverzeichnis wird erstellt
 
-	% Verzeichnisse
-	\renewcommand*{\chapterpagestyle}{plain}
-	\pagestyle{plain}
-	\printacronyms[template=physics, include=physics, name=Formelverzeichnis]
-	\printacronyms[template=physics, exclude=physics, name=Abkürzungsverzeichnis]
+	% -- Verzeichnisse
+	\renewcommand*{\chapterpagestyle}{plain}						% Kapitel-Style wird auf plain gestellt 
+	\pagestyle{plain}												% Seiten-Style wird auf plain gestellt
+	\printacronyms[template=physics, include=physics, name=Formelverzeichnis]		%TBR
+	\printacronyms[template=physics, exclude=physics, name=Abkürzungsverzeichnis]	%TBR
 
-	\listoffigures                         													 % Erzeugen des Abbildungsverzeichnisses 
-	\listoftables                          													 % Erzeugen des Tabellenverzeichnisses
-    \renewcommand{\lstlistlistingname}{Quellcodeverzeichnis}
-    \lstlistoflistings                     													 % Erzeugen des Listenverzeichnisses
-    \setcounter{savepage}{\value{page}}
+	\listoffigures                         							% Erzeugen des Abbildungsverzeichnisses 
+	\listoftables                          							% Erzeugen des Tabellenverzeichnisses
+    \renewcommand{\lstlistlistingname}{Quellcodeverzeichnis}		% Umbenennung des Quellcodeverzeichisses
+    \lstlistoflistings                     							% Erzeugen des Listenverzeichnisses
+    \setcounter{savepage}{\value{page}}								% Römische Seitenzahl wird für später gespeichert
 
-	% Liste der zu erledigenden Punkte. Wichtig: Diese Liste muss vor der endgültigen Abgabe auskommentiert werden!
+	% -- Liste der zu erledigenden Punkte. Wichtig: Diese Liste muss vor der endgültigen Abgabe auskommentiert werden!
 	\listoftodos
     
-    % Einbinden von den verschiedenen Kapiteln
-    \cleardoublepage
-    \pagenumbering{arabic}                										  % Arabische Seitenzahlen für den Hauptteil
-    \setlength{\parskip}{0.5\baselineskip}  								% Abstand zwischen Absätzen
-    \rmfamily
-    \renewcommand*{\chapterpagestyle}{scrheadings}
-    \pagestyle{scrheadings}
-   	\onehalfspacing
-	\sffamily                               												 % Serifenlose Schrift verwenden. 
+    % -- Einbinden von den verschiedenen Kapiteln
+    \cleardoublepage												% Beendet eine Seite
+    \pagenumbering{arabic}                							% Arabische Seitenzahlen für den Hauptteil
+    \setlength{\parskip}{0.5\baselineskip}  						% Abstand zwischen Absätzen wird geändert
+    \rmfamily														% Schriftfamilie wird festgelegt
+    \renewcommand*{\chapterpagestyle}{scrheadings}					% Kapitel-Style wird auf scrheadings gestellt 
+    \pagestyle{scrheadings}											% Seiten-Style wird auf scrheadings gestellt
+    \onehalfspacing													% Eineinhalbfacher Zeilenabstand
+	\sffamily                               					 	% Serifenlose Schrift verwenden. 
 	   
-	\ifthenelse{\boolean{abgabeVersion}}
+	\ifthenelse{\boolean{abgabeVersion}}							% Beispielkapitel werden eingebunden
 	{}
 	{
 		\include{content/00_LaTeX/exampleProject/01_einleitung}
@@ -107,18 +117,18 @@
 		\include{content/00_LaTeX/exampleProject/06_literaturHinweis}
 	}
 	
-	% Einbinden des Literaturverzeichnisses 
-	\cleardoublepage
-	\renewcommand*{\chapterpagestyle}{plain}
-	\pagestyle{plain}
-	\pagenumbering{Roman}                   % Römische Seitenzahlen
-	\setcounter{page}{\numexpr\value{savepage}+1}
-	\printbibliography[title=Literaturverzeichnis]
+	% -- Einbinden des Literaturverzeichnisses 
+	\cleardoublepage												% Beendet eine Seite
+	\renewcommand*{\chapterpagestyle}{plain}						% Kapitel-Style wird auf plain gestellt 
+	\pagestyle{plain}												% Seiten-Style wird auf plain gestellt			
+	\pagenumbering{Roman}                   						% Römische Seitenzahlen
+	\setcounter{page}{\numexpr\value{savepage}+1}					% Zähler der römischen Zahlen wird inkrementiert
+	\printbibliography[title=Literaturverzeichnis]					% Literaturverzeichnis wird erstellt
 	
-	% Einbinden des Glossars
-	\printglossary[style=altlist,title=Glossar]
+	% -- Einbinden des Glossars
+	\printglossary[style=altlist,title=Glossar]						% Glossar wird erstellt
 
-    % Einbinden von Anhängen
+    % -- Einbinden von Anhängen
     \begin{appendices}
 		\include{content/07_appendix/index}
 	\ifthenelse{\boolean{abgabeVersion}}

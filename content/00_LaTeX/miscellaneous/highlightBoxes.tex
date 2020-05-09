@@ -1,6 +1,6 @@
-% ---- Definition für Highlight Boxen
+% Current file is content/00_LaTeX/miscellanious/highlightBoxes.tex
 
-% ---- Grundsätzliche Definition zum Style
+% -- Grundsätzliche Definition zum Style
 \newtheoremstyle{defi}
   {\topsep}         % Abstand oben
   {\topsep}         % Abstand unten
@@ -12,7 +12,7 @@
   {\thmname{#3}}    % Name in eckigen Klammern
 \theoremstyle{defi}
 
-% ------ Definition zum Strich vor eines Texts
+% -- Definition zum Strich vor eines Texts
 \newmdtheoremenv[
   hidealllines = true,       % Rahmen komplett ausblenden
   leftline = true,           % Linie links einschalten
@@ -23,15 +23,15 @@
   linecolor = gray!40,       % Linienfarbe
 ]{defStrich}{Definition}     % Name der des formats "defStrich"
 
-% ------ Definition zum Eck-Kasten um einen Text
+% -- Definition zum Eck-Kasten um einen Text
 \newmdtheoremenv[
-  hidealllines = true,
-  innertopmargin = 6pt,
-  linecolor = gray!40,
-  singleextra={              % Eck-Markierungen für die Definition
+  hidealllines = true,                                                  % Rahmen komplett ausblenden
+  innertopmargin = 6pt,                                                 % Abstand oben
+  linecolor = gray!40,                                                  % Linienfarbe
+  singleextra={                                                         % Eck-Markierungen für die Definition
     \draw[line width=3pt,gray!50,line cap=rect] (O|-P) -- +(1cm,0pt);
     \draw[line width=3pt,gray!50,line cap=rect] (O|-P) -- +(0pt,-1cm);
     \draw[line width=3pt,gray!50,line cap=rect] (O-|P) -- +(-1cm,0pt);
     \draw[line width=3pt,gray!50,line cap=rect] (O-|P) -- +(0pt,1cm);
   }
-]{defEckKasten}{Definition}  % Name der des formats "defEckKasten"
+]{defEckKasten}{Definition}                                             % Name der des formats "defEckKasten"
