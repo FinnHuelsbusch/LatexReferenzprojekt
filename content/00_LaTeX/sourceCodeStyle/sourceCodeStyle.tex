@@ -1,31 +1,8 @@
-% -- Eigene Farben für den Quellcode
-\definecolor{JavaLila}{rgb}{0.4,0.1,0.4}
-\definecolor{JavaGruen}{rgb}{0.3,0.5,0.4}
-\definecolor{JavaBlau}{rgb}{0.0,0.0,1.0}
-\definecolor{ABAPKeywordsBlue}{HTML}{6000ff}
-\definecolor{ABAPCommentGrey}{HTML}{808080}
-\definecolor{ABAPStringGreen}{HTML}{4da619}
-\definecolor{PyKeywordsBlue}{HTML}{0000AC}
-\definecolor{PyCommentGrey}{HTML}{808080}
-\definecolor{PyStringGreen}{HTML}{008080}
-% -- Farben für ABAP CDS
-\definecolor{CDSString}{HTML}{FF8C00}
-\definecolor{CDSKeywords}{HTML}{6000ff}
-\definecolor{CDSAnnotation}{HTML}{00BFFF}
-\definecolor{CDSComment}{HTML}{808080}
-\definecolor{CDSFunc}{HTML}{FF0000}
-% -- Farben für C++
-\definecolor{C++Lila}{HTML}{A640FF}
-\definecolor{C++Orange}{HTML}{D69D85}
-\definecolor{C++Blau}{HTML}{569CD6}
-\definecolor{C++DunkelBlau}{HTML}{0E4583}
-\definecolor{C++Mint}{HTML}{B8D7A3}
-\definecolor{C++Creme}{HTML}{DCDCAA}
-\definecolor{C++Gruen}{HTML}{57A64A}
-\definecolor{C++Tuerkis}{HTML}{4EC9B0}
+% -- Default Farben für den Quellcode
+\definecolor{DefaultGruen}{rgb}{0.3,0.5,0.4}
+\definecolor{DefaultBlau}{rgb}{0.0,0.0,1.0}
 
-% -- Default Listing-Styles
-
+% -- Default Listing-Style
 \lstset{
 	% Das Paket "listings" kann kein UTF-8. Deswegen werden hier 
 	% die häufigsten Zeichen definiert (ä,ö,ü,...)
@@ -57,167 +34,16 @@
 	keywordstyle=\color{blue},
 	ndkeywordstyle=\bfseries\color{darkgray},
 	identifierstyle=\color{black},
-	commentstyle=\itshape\color{JavaGruen},   % Kommentare in eigener Farbe
-	stringstyle=\color{JavaBlau},             % Strings in eigener Farbe,
+	commentstyle=\itshape\color{DefaultGruen},   % Kommentare in eigener Farbe
+	stringstyle=\color{DefaultBlau},             % Strings in eigener Farbe,
 	captionpos=b                             % Bild*unter*schrift
 }
 
-% ---- Eigener JAVA-Style für den Quellcode
-\renewcommand{\ttdefault}{pcr}               % Schriftart, welche auch fett beinhaltet
-\lstdefinestyle{EigenerJavaStyle}{
-	language=Java,                             % Syntax Highlighting für Java
-	%frame=single,                             % Umrandung des Codes
-	keywordstyle=\bfseries\color{JavaLila},    % Keywords in eigener Farbe und fett
-	commentstyle=\itshape\color{JavaGruen},    % Kommentare in eigener Farbe und italic
-	stringstyle=\color{JavaBlau}               % Strings in eigener Farbe
-}
-
-% ---- Eigener ABAP-Style für den Quellcode
-\renewcommand{\ttdefault}{pcr}
-\lstdefinestyle{EigenerABAPStyle}{
-	language=[R/3 6.10]ABAP,
-	morestring=[b]\|,                          % Für Pipe-Strings
-	morestring=[b]\`,                          % für Backtick-Strings
-	keywordstyle=\bfseries\color{ABAPKeywordsBlue},
-	commentstyle=\itshape\color{ABAPCommentGrey},
-	stringstyle=\color{ABAPStringGreen},
-	tabsize=2,
-	morekeywords={
-		types,
-		@data,
-		as,
-		lower,
-		start,
-		selection,
-		order,
-		by,
-		inner,
-		join,
-		key,
-		end,
-		cast
-	}
-}
-
-% ---- Eigener Python-Style für den Quellcode
-\renewcommand{\ttdefault}{pcr}
-\lstdefinestyle{EigenerPythonStyle}{
-	language=Python,
-	columns=flexible,
-	keywordstyle=\bfseries\color{PyKeywordsBlue},
-	commentstyle=\itshape\color{PyCommentGrey},
-	stringstyle=\color{PyStringGreen}
-}
-
-%----- ABAP-CDS-View language
-\lstdefinelanguage{ABAPCDS}{
-	sensitive=false,
-	%Keywords
-	morekeywords={define,
-		view,
-		as,
-		select,
-		from,
-		inner,
-		join,
-		on,
-		key,
-		case,
-		when,
-		then,
-		else,
-		end,
-		true,
-		false,
-		cast,
-		where,
-		and,
-		distinct,
-		group,
-		by,
-		having,
-		min,
-		sum,
-		max,
-		count,
-		avg
-	},
-	%Methoden
-	morekeywords=[2]{
-		div,
-		currency\_conversion,
-		dats\_days\_between,
-		concat\_with\_space,
-		dats\_add_days,
-		dats\_is\_valid,
-		dats\_add\_months,
-		unit\_conversion,
-		division,
-		mod,
-		abs,
-		floor,
-		ceil,
-		round,
-		concat,
-		replace,
-		substring,
-		left,
-		right,
-		length
-	},
-	morecomment=[s][\color{CDSAnnotation}]{@}{:},
-	morecomment=[l][\itshape\color{CDSComment}]{//},
-	morecomment=[s][\itshape\color{CDSComment}]{/*}{*/},
-	morestring=[b][\color{CDSString}]',
-	keywordstyle=\bfseries\color{CDSKeywords},
-	keywordstyle=[2]\color{CDSFunc}
-}
-
-
-% ---- Eigener XSD-Style für den Quellcode
-\renewcommand{\ttdefault}{pcr}
-\lstdefinestyle{EigenerXSDStyle}{
-	language=XML,                     
-	stringstyle=\color{JavaGruen},
-	morekeywords={
-		encoding,
-		xs:schema,
-		xs:element,
-		xs:complexType,
-		xs:sequence,
-		xs:attribute,
-		xs:simpleContent,
-		xs:extension base, 
-		encoding,
-		schema,
-		element,
-		complexType,
-		sequence,
-		attribute,
-		simpleContent,
-		extension base
-	}
-}
-
-% ---- Eigener C++-Style für den Quellcode
-\renewcommand{\ttdefault}{pcr}               % Schriftart, welche auch fett beinhaltet
-\lstdefinestyle{EigenerC++Style}{
-	language=C++,			% Standardsprache des Quellcodes
-    columns=flexible,
-	morekeywords={nullptr},
-	% Enumerators (Mint)
-	morekeywords=[2]{},
-    % Methoden (Cremefarben)
-	morekeywords=[3]{},
-	% Extra Keywords (Lila)
-	morekeywords=[4]{},
-	% Noch mehr Keywords (Gruen)
-	morekeywords=[5]{},
-    keywordstyle=\bfseries\color{C++DunkelBlau},
-    keywordstyle=[2]\color{C++Mint},
-    keywordstyle=[3]\color{C++Creme},
-    keywordstyle=[4]\color{C++Lila},
-    keywordstyle=[5]\color{C++Tuerkis},
-	commentstyle=\itshape\color{C++Gruen},
-	stringstyle=\color{C++Orange}
-}
+% -- Laden der zusätzlichen Styles
+\input{content/00_LaTeX/sourceCodeStyle/languages/ABAP-CDS-View}
+\input{content/00_LaTeX/sourceCodeStyle/languages/ABAP}
+\input{content/00_LaTeX/sourceCodeStyle/languages/C&C++}
+\input{content/00_LaTeX/sourceCodeStyle/languages/Java}
+\input{content/00_LaTeX/sourceCodeStyle/languages/JSON}
+\input{content/00_LaTeX/sourceCodeStyle/languages/Python}
+\input{content/00_LaTeX/sourceCodeStyle/languages/XML&XSD}
