@@ -18,7 +18,6 @@
 % 13: Sonstige 
 
 
-
 %------------------------------------ Allgemeines ------------------------------------%
 % 1.	Dokumentenklasse
 % 2.	Sprache und Umlaute
@@ -31,18 +30,18 @@
 
 % -- Deklarierung der Dokumentenklasse scrreprt
 \documentclass[
-fontsize=12pt,			% Leitlinien sprechen von Schriftgröße 12.
-paper=A4,				% Papiergröße wird auf A4 festgelegt
-twoside=false,			% Zweiseitiger Druck wird deaktiviert
-listof=totoc,           % Tabellen- und Abbildungsverzeichnis ins Inhaltsverzeichnis
-index=totoc,			% Stichwortverzeichnis wird in das Inhaltsverzeichniss aufgenommen
-bibliography=totoc,		% Literaturverzeichnis ins Inhaltsverzeichnis aufnehmen
-titlepage,              % Titlepage-Umgebung anstatt \maketitle
-headsepline,            % Horizontale Linie unter Kolumnentitel
-abstracton,             % Überschrift einschalten, Abstract muss in {abstract}-Umgebung stehen
-hidelinks,				% Boxen um klickbare Links werden entfernt
-ngerman					% Sprache wird auf Deutsch festgelegt
-]{scrreprt}             % Verwendung von KOMA-Report
+	fontsize=12pt,			% Leitlinien sprechen von Schriftgröße 12.
+	paper=A4,				% Papiergröße wird auf A4 festgelegt
+	twoside=false,			% Zweiseitiger Druck wird deaktiviert
+	listof=totoc,           % Tabellen- und Abbildungsverzeichnis ins Inhaltsverzeichnis
+	index=totoc,			% Stichwortverzeichnis wird in das Inhaltsverzeichniss aufgenommen
+	bibliography=totoc,		% Literaturverzeichnis ins Inhaltsverzeichnis aufnehmen
+	titlepage,              % Titlepage-Umgebung anstatt \maketitle
+	headsepline,            % Horizontale Linie unter Kolumnentitel
+	abstracton,             % Überschrift einschalten, Abstract muss in {abstract}-Umgebung stehen
+	hidelinks,				% Boxen um klickbare Links werden entfernt
+	ngerman					% Sprache wird auf Deutsch festgelegt
+]{scrreprt}             	% Verwendung von KOMA-Report
 
 
 % -- Einstellung der Sprache des Dokuments und die Darstellung von mathematischen Symbolen und Eingabemöglichkeit von Umlauten
@@ -280,7 +279,11 @@ ngerman					% Sprache wird auf Deutsch festgelegt
 
 % -- Einstellungen für Abkürzungen
 \usepackage{acro}	%Abkürzungen werden nur gedruckt wenn sie gebraucht wurden
-\acsetup{ list/display = used, list/sort = true, list/template = table}
+\acsetup{ 
+	list/display = used, 
+	list/sort = true, 
+	list/template = table
+}
 \input{content/05_lists/formular}
 \input{content/05_lists/acronym}
 
