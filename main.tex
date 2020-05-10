@@ -42,17 +42,17 @@
 \newcommand{\betreuerFirma}{B-Vorname B-Nachname}
 
 % -- Zusätzliche Optionen 
-\setboolean{durchgehendeFussnoten}{true}
-\setboolean{sperrvermerkLangeVersion}{true}
-\setboolean{abgabeVersion}{false} 			% todos und instruktionen werden ausgeblendet
-\input{content/00_LaTeX/variables/runVariables}
+\setboolean{durchgehendeFussnoten}{true}		% Die Fußnoten werden nicht nach jedem Kapitel neu gezählt
+\setboolean{sperrvermerkLangeVersion}{true}		% Es soll eine lange Version des Sperrvermerks eingebunden werden
+\setboolean{abgabeVersion}{false} 				% ToDo-Notes und andere Dokumente werden ausgeblendet. Dies ist die Abgabe Version.
+\input{content/00_LaTeX/variables/runVariables}	% Einstellungen der Variablen werden ausgeführt
 
-% -- Glossar wird initialisiert
-\makeglossaries
-\input{content/07_appendix/glossary}
+% -- Glossar
+\makeglossaries									% Glossarfunktionen werden initialisiert
+\input{content/07_appendix/glossary}			% Glossareinträge werden ausgelesen
 
-% -- Kopf- und Fußzeilen werden eingelesen
-\input{content/00_LaTeX/miscellaneous/headerAndFooter}
+% -- Kopf- und Fußzeilen
+\input{content/00_LaTeX/miscellaneous/headerAndFooter}	% Layout der Kopf- und Fußzeilen werden eingelesen
 
 \begin{document}
 	\setlength{\parindent}{0pt}              	% Keine Paragraphen Einrückung.
@@ -62,7 +62,7 @@
 	
 	% -- Einbinden des Deckblatts
 	\singlespacing								% Einfacher Zeilenabstand
-    \include{content/01_titlepage/titlepage}
+    \include{content/01_titlepage/titlepage}	% Titelseite wird eingebunden
     \newcounter{savepage}						% Zähler für die römischen Zahlen wird erstellt.
     \pagenumbering{Roman} 						% Seitenzahlen werden durch römische Buchstaben gekennzeichnet
     \onehalfspacing								% Eineinhalbfacher Zeilenabstand
