@@ -40,17 +40,21 @@
 	headsepline,            % Horizontale Linie unter Kolumnentitel
 	abstracton,             % Überschrift einschalten, Abstract muss in {abstract}-Umgebung stehen
 	hidelinks,				% Boxen um klickbare Links werden entfernt
-	ngerman					% Sprache wird auf Deutsch festgelegt
+	ngerman,				% Sprache wird auf Deutsch festgelegt
+	english					% Englisch als weiter Sprache hinzufügen
 ]{scrreprt}             	% Verwendung von KOMA-Report
 
 
 % -- Einstellung der Sprache des Dokuments und die Darstellung von mathematischen Symbolen und Eingabemöglichkeit von Umlauten
-\usepackage[ngerman]{babel}					% Sprache wird auf Deutsch festgelegt
+\usepackage[
+	main = ngerman,							% Sprache wird auf Deutsch festgelegt
+	english									% Englisch wird unterstützt
+]{babel}									
 \usepackage[T1]{fontenc}					% Voraussetzung für LaTeX Fonts in westeuropäischer Codierung
 \usepackage[utf8]{inputenc}					% UTF8 wird unterstützt
 \usepackage[activate]{microtype}      		% Trennung von Wörtern wird besser umgesetzt
 \usepackage{lmodern}         				% Nicht-gerasterte Schriftarten (bei MikTeX erforderlich)
-\usepackage[babel,german=quotes]{csquotes}  % Deutsche Anführungszeichen + Zitate
+\usepackage[babel]{csquotes}  				% Anführungszeichen + Zitate
 
 
 % -- Einstellungen am Zeilenabstand
@@ -161,7 +165,6 @@
 	isbn=false,                     % ISBN nicht anzeigen
 	alldates=short                  % Datum immer als DD.MM.YYYY anzeigen
 ]{biblatex}
-
 
 % -- Einstellung des Dateipfades der Bibtex-Datei
 \addbibresource{content/sources.bib}		% Speicherort der Quellendatei
@@ -321,6 +324,10 @@
 % 1.	Sonstige Pakete
 % 2.	Sonstige Einstellungen
 
+% Neue Überschrift für das Literaturverzeichnis auf Deutsch
+\renewcaptionname{ngerman}{\bibname}{Literaturverzeichnis}
+\newcaptionname{ngerman}{\lstlistlistingname}{Quellcodeverzeichnis}
+\newcaptionname{english}{\lstlistlistingname}{List of Listings}
 
 % -- Sonstige Pakete
 \usepackage{lipsum}				% Paket für Blindtext
