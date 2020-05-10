@@ -1,6 +1,48 @@
 % Current file is content/01_titlepage/tilepage.tex
 
 \thispagestyle{empty}
+\ifthenelse{\boolean{englischeVersion}}
+{
+	\begin{titlepage}
+		\enlargethispage{4cm}
+		\begin{figure}
+			% \vspace*{-5mm} 
+			\begin{minipage}{0.49\textwidth}
+				\flushleft
+				\missingfigure[figheight=2.5cm, figcolor=white]{Insert company logo here} 
+				%\includegraphics[height=2.5cm]{images/logos/...} 
+			\end{minipage}
+			\hfill
+			\begin{minipage}{0.49\textwidth}
+				\flushright
+				\includegraphics[height=2.5cm]{images/logos/dhbw.pdf} 
+			\end{minipage}
+		\end{figure} 
+		\vspace*{0.1cm}
+		\begin{center}
+			\huge{\textbf{\titel}}\\[1.5cm]
+			\Large{\textbf{\arbeit}}\\[0.5cm]
+			\normalsize{as part of the examination for the\\[1ex] \textbf{\abschluss}}\\[0.5cm]
+			\Large{in \studiengang}\\[1ex]
+			\normalsize{at the Baden-Wuerttemberg Cooperative State University Baden-Wuerttemberg}\\[1cm]
+			\normalsize{by}\\[1ex] \Large{\textbf{\vorname\,\nachname}} \\[1cm]
+			\normalsize{\bearbeitungsmonat}\\[2.25cm]
+			\begin{spacing}{0.8}
+				\begin{tabular}{ll}
+					\textbf{Date of submission}				\hspace{4.5cm}					& \abgabeDatum\\[0.2cm]
+					\textbf{Handling period}       				&  \bearbeitungszeitraum\\[0.2cm]
+					\textbf{Matriculation number, Course}	   	&  \matrikelnr, \kurs\\[0.2cm]
+					\textbf{Training company}              					 &  \firmaName\\
+																							& \firmaStrasse \\
+																							& \firmaPlz\\[0.2cm]
+					\textbf{Supervisor of the training company}          &  \betreuerFirma\\[0.2cm]
+					\textbf{Evaluator of the  Cooperative State University}    &  \betreuerDhbw\\[0.2cm]
+				\end{tabular} 
+			\end{spacing}
+		\end{center}
+	\end{titlepage}
+}
+{
 \begin{titlepage}
 	\enlargethispage{4cm}
 	\begin{figure}
@@ -32,10 +74,11 @@
 				\textbf{Matrikelnummer, Kurs} 					   	&  \matrikelnr, \kurs\\[0.2cm]
 				\textbf{Ausbildungsfirma}              					 &  \firmaName\\
 																						& \firmaStrasse \\
-																				    	& \firmaPlz\\[0.2cm]
+																						& \firmaPlz\\[0.2cm]
 				\textbf{Betreuer der Ausbildungsfirma}          &  \betreuerFirma\\[0.2cm]
 				\textbf{Gutachter der Dualen Hochschule}    &  \betreuerDhbw\\[0.2cm]
 			\end{tabular} 
 		\end{spacing}
 	\end{center}
 \end{titlepage}
+}
