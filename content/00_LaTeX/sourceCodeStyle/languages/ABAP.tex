@@ -1,0 +1,33 @@
+% Current file is content/00_LaTeX/sourceCodeStyle/languages/ABAP.tex
+
+% -- Eigene Farben für den Style
+\definecolor{ABAPKeywordsBlue}{HTML}{6000ff}
+\definecolor{ABAPCommentGrey}{HTML}{808080}
+\definecolor{ABAPStringGreen}{HTML}{4da619}
+
+% -- Eigener ABAP-Style für den Quellcode
+\renewcommand{\ttdefault}{pcr}
+\lstdefinestyle{EigenerABAPStyle}{
+	language=[R/3 6.10]ABAP,
+	morestring=[b]\|,                          % Für Pipe-Strings
+	morestring=[b]\`,                          % für Backtick-Strings
+	keywordstyle=\bfseries\color{ABAPKeywordsBlue},
+	commentstyle=\itshape\color{ABAPCommentGrey},
+	stringstyle=\color{ABAPStringGreen},
+	tabsize=2,
+	morekeywords={
+		types,
+		@data,
+		as,
+		lower,
+		start,
+		selection,
+		order,
+		by,
+		inner,
+		join,
+		key,
+		end,
+		cast
+	}
+}

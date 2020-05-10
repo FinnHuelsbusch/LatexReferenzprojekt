@@ -1,0 +1,72 @@
+% Current file is content/00_LaTeX/sourceCodeStyle/languages/ABAP-CDS-View.tex
+
+% -- Eigene Farben für den Style
+\definecolor{CDSString}{HTML}{FF8C00}
+\definecolor{CDSKeywords}{HTML}{6000ff}
+\definecolor{CDSAnnotation}{HTML}{00BFFF}
+\definecolor{CDSComment}{HTML}{808080}
+\definecolor{CDSFunc}{HTML}{FF0000}
+
+% -- Eigener ABAP-CDS-View-Style für den Quellcode
+\lstdefinelanguage{ABAPCDS}{
+	sensitive=false,
+	%Keywords
+	morekeywords={define,
+		view,
+		as,
+		select,
+		from,
+		inner,
+		join,
+		on,
+		key,
+		case,
+		when,
+		then,
+		else,
+		end,
+		true,
+		false,
+		cast,
+		where,
+		and,
+		distinct,
+		group,
+		by,
+		having,
+		min,
+		sum,
+		max,
+		count,
+		avg
+	},
+	%Methoden
+	morekeywords=[2]{
+		div,
+		currency\_conversion,
+		dats\_days\_between,
+		concat\_with\_space,
+		dats\_add_days,
+		dats\_is\_valid,
+		dats\_add\_months,
+		unit\_conversion,
+		division,
+		mod,
+		abs,
+		floor,
+		ceil,
+		round,
+		concat,
+		replace,
+		substring,
+		left,
+		right,
+		length
+	},
+	morecomment=[s][\color{CDSAnnotation}]{@}{:},
+	morecomment=[l][\itshape\color{CDSComment}]{//},
+	morecomment=[s][\itshape\color{CDSComment}]{/*}{*/},
+	morestring=[b][\color{CDSString}]',
+	keywordstyle=\bfseries\color{CDSKeywords},
+	keywordstyle=[2]\color{CDSFunc}
+}

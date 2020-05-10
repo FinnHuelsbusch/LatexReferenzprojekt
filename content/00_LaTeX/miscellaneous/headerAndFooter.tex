@@ -1,14 +1,15 @@
-% ---- Metainformation für das PDF Dokument
+% Current file is content/00_LaTeX/miscellanious/headerAndFooter.tex
+
+% -- Metainformation für das PDF Dokument
+% Hier werden die Metainformationen für das generierte PDF Dokument hinterlegt. Eingesehen werden können diese Informationen in Acrobat unter Datei -> Eigenschaften.
 \hypersetup{
-	pdftitle    = {\titel},
-	pdfsubject  = {\arbeit},
-	pdfauthor   = {\vorname\,\nachname},
-	%pdfkeywords = {Keywords angeben},
-	pdfcreator  = {LaTeX},
-	%pdfproducer = {in der Regel pdfTeX}
+    pdftitle    = {\titel},
+    pdfsubject  = {\arbeit},
+    pdfauthor   = {\nachname, \vorname},
+    pdfcreator  = {LaTeX}
 }
 
-% ---- Definition der Kopf- und Fußzeilen
+% -- Definition der Kopf- und Fußzeilen
 \clearscrheadfoot                               % Löschen von LaTeX Standard
 \automark[section]{chapter}                     % Füllen von section und chapter
 \renewcommand*{\chaptermarkformat}{}            % Entfernt die Kapitelnummer
