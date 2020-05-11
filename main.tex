@@ -25,16 +25,16 @@
 \newcommand{\matrikelnr}{1234567}
 \newcommand{\kurs}{AB12CDE}
 \newcommand{\studiengang}{Musterstudiengang}
-\newcommand{\studienjahr}{2019}							% Datum in dem Format yyyy angeben
+\newcommand{\studienjahr}{2019}										% Datum in dem Format yyyy angeben
 \newcommand{\abschluss}{Bachelor of Muster}
 \newcommand{\dhbwStandort}{Musterort}					
 \newcommand{\betreuerDhbw}{DH-Vorname DH-Nachname}
 
 % -- Angaben zum Zeitraum und der Abgabe
 \newcommand{\abgabeOrt}{Musterort}						
-\newcommand{\abgabeDatum}{2020-09-08} 					% Datum in dem Format yyyy-mm-dd angeben
-\newcommand{\bearbeitungszeitraumBeginn}{2020-03-24} 	% Datum in dem Format yyyy-mm-dd angeben
-\newcommand{\bearbeitungszeitraumEnde}{2020-09-08} 		% Datum in dem Format yyyy-mm-dd angeben
+\newcommand{\abgabeDatum}{2020-09-08} 								% Datum in dem Format yyyy-mm-dd angeben
+\newcommand{\bearbeitungszeitraumBeginn}{2020-03-24} 				% Datum in dem Format yyyy-mm-dd angeben
+\newcommand{\bearbeitungszeitraumEnde}{2020-09-08} 					% Datum in dem Format yyyy-mm-dd angeben
 
 % -- Angaben zu der Ausbildungsfirma
 \newcommand{\firmaName}{Musterfirma}
@@ -43,32 +43,32 @@
 \newcommand{\betreuerFirma}{B-Vorname B-Nachname}
 
 % -- Zusätzliche Optionen 
-\setboolean{durchgehendeFussnoten}{true}		% Die Fußnoten werden nicht nach jedem Kapitel neu gezählt
-\setboolean{sperrvermerkLangeVersion}{true}		% Es soll eine lange Version des Sperrvermerks eingebunden werden
-\setboolean{abgabeVersion}{false} 				% ToDo-Notes und andere Dokumente werden ausgeblendet. Dies ist die Abgabeversion.
-\setboolean{englischeVersion}{true}				% Verwendung der englischen Version inklusive Satz. 
-\input{content/00_LaTeX/variables/runVariables}	% Einstellungen der Variablen werden ausgeführt
+\setboolean{durchgehendeFussnoten}{true}							% Die Fußnoten werden nicht nach jedem Kapitel neu gezählt
+\setboolean{sperrvermerkLangeVersion}{true}							% Es soll eine lange Version des Sperrvermerks eingebunden werden
+\setboolean{abgabeVersion}{false} 									% ToDo-Notes und andere Dokumente werden ausgeblendet. Dies ist die Abgabeversion.
+\setboolean{englischeVersion}{true}									% Verwendung der englischen Version inklusive Satz. 
+\input{content/00_LaTeX/variables/runVariables}						% Einstellungen der Variablen werden ausgeführt
 
 % -- Glossar
-\makeglossaries									% Glossarfunktionen werden initialisiert
-\input{content/07_appendix/glossary}			% Glossareinträge werden ausgelesen
+\makeglossaries														% Glossarfunktionen werden initialisiert
+\input{content/07_appendix/glossary}								% Glossareinträge werden ausgelesen
 
 % -- Kopf- und Fußzeilen
-\input{content/00_LaTeX/miscellaneous/headerAndFooter}	% Layout der Kopf- und Fußzeilen werden eingelesen
+\input{content/00_LaTeX/miscellaneous/headerAndFooter}				% Layout der Kopf- und Fußzeilen werden eingelesen
 
 \begin{document}
 	
-	\setlength{\parindent}{0pt}              	% Keine Paragraphen Einrückung.
-	\setcounter{secnumdepth}{2}             	% Nummerierungstiefe fürs Inhaltsverzeichnis
-	\setcounter{tocdepth}{1}             	    % Tiefe des Inhaltsverzeichnisses. Ggf. so anpassen, dass das Verzeichnis auf eine Seite passt.
-	\sffamily                                	% Serifenlose Schrift verwenden.
+	\setlength{\parindent}{0pt}              						% Keine Paragraphen Einrückung.
+	\setcounter{secnumdepth}{2}             						% Nummerierungstiefe fürs Inhaltsverzeichnis
+	\setcounter{tocdepth}{1}             	    					% Tiefe des Inhaltsverzeichnisses. Ggf. so anpassen, dass das Verzeichnis auf eine Seite passt.
+	\sffamily                                						% Serifenlose Schrift verwenden.
 	
 	% -- Einbinden des Deckblatts
-	\singlespacing								% Einfacher Zeilenabstand
-    \include{content/01_titlepage/titlepage}	% Titelseite wird eingebunden
-    \newcounter{savepage}						% Zähler für die römischen Zahlen wird erstellt.
-    \pagenumbering{Roman} 						% Seitenzahlen werden durch römische Buchstaben gekennzeichnet
-    \onehalfspacing								% Eineinhalbfacher Zeilenabstand
+	\singlespacing													% Einfacher Zeilenabstand
+    \include{content/01_titlepage/titlepage}						% Titelseite wird eingebunden
+    \newcounter{savepage}											% Zähler für die römischen Zahlen wird erstellt.
+    \pagenumbering{Roman} 											% Seitenzahlen werden durch römische Buchstaben gekennzeichnet
+    \onehalfspacing													% Eineinhalbfacher Zeilenabstand
     
     % -- Einbinden der Erklärung
     \include{content/02_declaration/declaration}
