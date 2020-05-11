@@ -1,4 +1,23 @@
-	
+\NewAcroTemplate[list]{standard}{%
+\acronymsmapT{%
+  \AcroAddRow{%
+	\acrowrite{short}%
+	&
+	\acrowrite{list}%
+	\tabularnewline
+  }%
+}%
+\acroheading
+\acropreamble
+\par\noindent
+\setlength\LTleft{0pt}%
+\setlength\LTright{0pt}%
+\begin{longtable}{@{}lll@{\extracolsep{\fill}}l@{}}
+  \AcronymTable
+\end{longtable}
+}
+
+
 	
 	\DeclareAcronym{AJAX}{
   		short = AJAX,

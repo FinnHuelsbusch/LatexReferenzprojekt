@@ -64,17 +64,17 @@
 
 % -- Einstellungen für den Zeilenumbruch, Seitenränder und mehr
 \usepackage[
-	left=2.7cm, 				% Ränder links werden eingestellt
-	right=2.5cm,				% Ränder rechts werden eingestellt
-	top=2.5cm,  				% Ränder oben werden eingestellt
-	bottom=2.5cm,				% Ränder unten werden eingestellt
-	includeheadfoot				% Schließt den Kopf und den Fuß in den druckbaren Bereich mit ein
+	left=2.7cm, 							% Ränder links werden eingestellt
+	right=2.5cm,							% Ränder rechts werden eingestellt
+	top=2.5cm,  							% Ränder oben werden eingestellt
+	bottom=2.5cm,							% Ränder unten werden eingestellt
+	includeheadfoot							% Schließt den Kopf und den Fuß in den druckbaren Bereich mit ein
 ]{geometry}                 
 
 
 % Layout für die Absätze
 \setlength{\parindent} {0.0em}
-\setlength{\parskip} {1.5ex plus0.5ex minus0.5ex}   % Setzt den Abstand zwischen 2 Absätzen 
+\setlength{\parskip} {1.5ex plus0.5ex minus0.5ex}   	% Setzt den Abstand zwischen 2 Absätzen 
 
 
 % -- Einstellung der Schriftart
@@ -123,17 +123,17 @@
 % 5.	Glossar
 
 % -- Einstellungen am Inaltsverzeichnis
-\usepackage{titletoc}				  % Paket für die Anpassungen am Inhaltsverzeichnis und dem Anhang
-\contentsmargin{0.75cm}       		  % Abstand im Inhaltsverzeichnis zw. Punkt und Seitenzahl
+\usepackage{titletoc}				  		% Paket für die Anpassungen am Inhaltsverzeichnis und dem Anhang
+\contentsmargin{0.75cm}       		  		% Abstand im Inhaltsverzeichnis zw. Punkt und Seitenzahl
 
 
 % -- Einstellungen für das Stichwortverzeichnis
-\usepackage{makeidx}				% Paket für das Stichwortverzeichnis
+\usepackage{makeidx}						% Paket für das Stichwortverzeichnis
 \makeindex							
 
 
 % -- Verbesserung der Übersetzung
-\usepackage{bookmark}				% Nur ein LaTeX-Durchlauf für die Aktualisierung von Verzeichnissen nötig
+\usepackage{bookmark}						% Nur ein LaTeX-Durchlauf für die Aktualisierung von Verzeichnissen nötig
 
 
 % -- Einstellungen für den Anhang
@@ -141,7 +141,10 @@
 
 
 % -- Einstellungen für das Glossar
-\usepackage[nonumberlist,toc]{glossaries}
+\usepackage[
+	nonumberlist,							% Keine Seitenzahlen im Glossar
+	toc										% Aufnahme in das Inhaltsverzeichniss 
+]{glossaries}
 
 %------------------------------------ Quellenverwaltung ------------------------------------%
 % 1.	Einstellungen von Biblatex
@@ -150,19 +153,17 @@
 
 % -- Einstellungen für Biblatex
 \usepackage[
-	backend = biber,                % Verweis auf biber
-	language = auto,				% Sprache wird automatisch festgelegt
-	style = numeric,                % Nummerierung der Quellen mit Zahlen
-	sorting = none,                 % none = Sortierung nach der Erscheinung im Dokument
-	sortcites = true,               % Sortiert die Quellen innerhalb eines cite-Befehls
-	block = space,                  % Extra Leerzeichen zwischen Blocks
-	hyperref = true,                % Links sind klickbar auch in der Quelle
-	%backref = true,                % Referenz, auf den Text an die zitierte Stelle
-	%bibencoding = auto,			% Ist die Standardeinstellung und kann weggelassen werden
-	giveninits = true,              % Vornamen werden abgekürzt
-	doi=false,                      % DOI nicht anzeigen
-	isbn=false,                     % ISBN nicht anzeigen
-	alldates=short                  % Datum immer als DD.MM.YYYY anzeigen
+	backend = biber,                		% Verweis auf biber
+	language = auto,						% Sprache wird automatisch festgelegt
+	style = numeric,                		% Nummerierung der Quellen mit Zahlen
+	sorting = none,                 		% none = Sortierung nach der Erscheinung im Dokument
+	sortcites = true,               		% Sortiert die Quellen innerhalb eines cite-Befehls
+	block = space,                  		% Extra Leerzeichen zwischen Blocks
+	hyperref = true,                		% Links sind klickbar auch in der Quelle
+	giveninits = true,              		% Vornamen werden abgekürzt
+	doi=false,                      		% DOI nicht anzeigen
+	isbn=false,                     		% ISBN nicht anzeigen
+	alldates=short                  		% Datum immer als DD.MM.YYYY anzeigen
 ]{biblatex}
 
 % -- Einstellung des Dateipfades der Bibtex-Datei
@@ -277,14 +278,13 @@
 
 
 %------------------------------------ Abkürzungen ------------------------------------%
-% TO BE REWORKED
+% 1.	Abkürzungen
 
 % -- Einstellungen für Abkürzungen
 \usepackage{acro}	%Abkürzungen werden nur gedruckt wenn sie gebraucht wurden
 \acsetup{ 
-	list/display = used, 
-	list/sort = true, 
-	list/template = table
+	list/display = used, 				% zeigt nur genutzte Abkürzungen 
+	list/sort = true, 					% sortiert alphabetisch 
 }
 \input{content/05_lists/formular}
 \input{content/05_lists/acronym}
