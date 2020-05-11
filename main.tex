@@ -87,16 +87,30 @@
 	% -- Verzeichnisse
 	\renewcommand*{\chapterpagestyle}{plain}						% Kapitel-Style wird auf plain gestellt 
 	\pagestyle{plain}												% Seiten-Style wird auf plain gestellt
-	\ifthenelse{\boolean{englischeVersion}}
-	{
-		\printacronyms[template=physics, include=physics, name=List of Formulas]	
-		\printacronyms[template=physics, exclude=physics, name=List of Abbreviations]	
+	\ifthenelse{\boolean{englischeVersion}}{						% Einbindung des Formel- und Abkürzungsverzeichnisses mit angepassten Titeln
+		\printacronyms[
+			template=physics, 
+			include=physics,
+			name=List of Formulas
+		]	
+		\printacronyms[
+			template=physics,
+			exclude=physics, 
+			name=List of Abbreviations
+		]	
 	}
 	{
-		\printacronyms[template=physics, include=physics, name=Formelverzeichnis]
-	\printacronyms[template=physics, exclude=physics, name=Abkürzungsverzeichnis]
+		\printacronyms[
+			template=physics, 
+			include=physics, 
+			name=Formelverzeichnis
+		]
+		\printacronyms[
+			template=physics, 
+			exclude=physics, 
+			name=Abkürzungsverzeichnis
+		]
 	}
-	
 
 	\listoffigures                         							% Erzeugen des Abbildungsverzeichnisses 
 	\listoftables                          							% Erzeugen des Tabellenverzeichnisses
