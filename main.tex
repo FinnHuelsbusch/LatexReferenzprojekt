@@ -58,6 +58,12 @@
 
 \begin{document}
 	
+	\ifthenelse{\boolean{englischeVersion}}
+	{
+		\selectlanguage{english}
+	}
+	{}
+
 	\setlength{\parindent}{0pt}              						% Keine Paragraphen Einrückung.
 	\setcounter{secnumdepth}{2}             						% Nummerierungstiefe fürs Inhaltsverzeichnis
 	\setcounter{tocdepth}{1}             	    					% Tiefe des Inhaltsverzeichnisses. Ggf. so anpassen, dass das Verzeichnis auf eine Seite passt.
