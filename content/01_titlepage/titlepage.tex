@@ -24,13 +24,13 @@
 			\Large{\textbf{\arbeit}}\\[0.5cm]
 			\normalsize{as part of the examination for the\\[1ex] \textbf{\abschluss}}\\[0.5cm]
 			\Large{in \studiengang}\\[1ex]
-			\normalsize{at the Baden-Wuerttemberg Cooperative State University \abgabeOrt}\\[1cm]
+			\normalsize{at the Baden-Wuerttemberg Cooperative State University \dhbwStandort}\\[1cm]
 			\normalsize{by}\\[1ex] \Large{\textbf{\vorname\,\nachname}} \\[1cm]
-			\normalsize{\bearbeitungsmonat}\\[2.25cm]
+			\normalsize{{\printdayoff\today}}\\[2.25cm]
 			\begin{spacing}{0.8}
 				\begin{tabular}{ll}
-					\textbf{Date of submission}				\hspace{4.5cm}					& \abgabeDatum\\[0.2cm]
-					\textbf{Handling period}       				&  \bearbeitungszeitraum\\[0.2cm]
+					\textbf{Date of submission}				\hspace{4.5cm}					& \printdate{\abgabeDatum}\\[0.2cm]
+					\textbf{Handling period}       				&  \daterange{\bearbeitungszeitraumBeginn}{\bearbeitungszeitraumEnde}\\[0.2cm]
 					\textbf{Matriculation number, Course}	   	&  \matrikelnr, \kurs\\[0.2cm]
 					\textbf{Training company}              					 &  \firmaName\\
 																							& \firmaStrasse \\
@@ -64,13 +64,13 @@
 		\Large{\textbf{\arbeit}}\\[0.5cm]
 		\normalsize{im Rahmen der Prüfung zum\\[1ex] \textbf{\abschluss}}\\[0.5cm]
 		\Large{des Studienganges \studiengang}\\[1ex]
-		\normalsize{an der Dualen Hochschule Baden-Württemberg \abgabeOrt}\\[1cm]
+		\normalsize{an der Dualen Hochschule Baden-Württemberg \dhbwStandort}\\[1cm]
 		\normalsize{von}\\[1ex] \Large{\textbf{\vorname\,\nachname}} \\[1cm]
-		\normalsize{\bearbeitungsmonat}\\[2.25cm]
+		\normalsize{{\printdayoff\today}}\\[2.25cm]
 		\begin{spacing}{0.8}
 			\begin{tabular}{ll}
-				\textbf{Abgabedatum}				\hspace{4.5cm}					& \abgabeDatum\\[0.2cm]
-				\textbf{Bearbeitungszeitraum}       				&  \bearbeitungszeitraum\\[0.2cm]
+				\textbf{Abgabedatum}				\hspace{4.5cm}					& \printdate{\abgabeDatum}\\[0.2cm]
+				\textbf{Bearbeitungszeitraum}       				&  \daterange{\bearbeitungszeitraumBeginn}{\bearbeitungszeitraumEnde}\\[0.2cm]
 				\textbf{Matrikelnummer, Kurs} 					   	&  \matrikelnr, \kurs\\[0.2cm]
 				\textbf{Ausbildungsfirma}              					 &  \firmaName\\
 																						& \firmaStrasse \\
