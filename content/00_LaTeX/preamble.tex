@@ -78,7 +78,7 @@
 
 
 % -- Einstellung der Schriftart
-\usepackage{lmodern}									% Pakte um die Schriftart zu Latin Modern zu ändern
+\usepackage[scaled=.95]{helvet}
 \renewcommand*\familydefault{\sfdefault} 				% Serifenlose Schrift 
 
 
@@ -97,7 +97,6 @@
 
 % -- Einstellungen für Mathematik
 \usepackage[sumlimits, intlimits]{amsmath}  % Bei Integralen und Summen werden die Zahlen oben drüber geschrieben 
-\usepackage{amsmath}    					% Erweiterung vom Mathe-Satz durch Funktionen
 \usepackage{amssymb}						% Erweiterung vom Mathe-Satz durch Symbole	
 \usepackage{amsfonts}						% Zusätzliche Schriftarten für den Mathe-Satz, sowie neue Symbole
 \usepackage{MnSymbol}   					% Für Symbole, die in amssymb nicht enthalten sind.						
@@ -155,14 +154,15 @@
 \usepackage[
 	backend = biber,                		% Verweis auf biber
 	language = auto,						% Sprache wird automatisch festgelegt
-	style = numeric,                		% Nummerierung der Quellen mit Zahlen
+	style = numeric-comp,                	% Nummerierung der Quellen mit Zahlen
+	bibencoding = utf8,						% UTF8 wird in biblatex aktiviert
 	sorting = none,                 		% none = Sortierung nach der Erscheinung im Dokument
 	sortcites = true,               		% Sortiert die Quellen innerhalb eines cite-Befehls
 	block = space,                  		% Extra Leerzeichen zwischen Blocks
 	hyperref = true,                		% Links sind klickbar auch in der Quelle
 	giveninits = true,              		% Vornamen werden abgekürzt
-	doi=false,                      		% DOI nicht anzeigen
-	isbn=false,                     		% ISBN nicht anzeigen
+	doi=true,                      			% DOI anzeigen
+	isbn=true,                     			% ISBN anzeigen
 	alldates=short                  		% Datum immer als DD.MM.YYYY anzeigen
 ]{biblatex}
 
