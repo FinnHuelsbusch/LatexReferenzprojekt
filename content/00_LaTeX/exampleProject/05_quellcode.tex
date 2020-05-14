@@ -16,15 +16,6 @@ Zu beachten ist, dass jedes Stück Code kommentiert werden sollte. Was wird in d
 \vspace*{0.5cm}
 
 \pagebreak
-\textbf{EVENT 01} \textit{INIT}
-\lstinputlisting[
-	label={code:SSCUI-AfterInit},  % Label; genutzt für Referenzen auf dieses Code-Beispiel
-	caption={Initialisierung im Programm},
-	captionpos=b,               % Position, für die Caption:  t(op) oder b(ottom)
-	style=EigenerABAPStyle,     % Eigener Style der vor dem Dokument festgelegt wurde
-	firstline=4,                % Zeilennummer im Dokument welche als erste angezeigt wird
-	lastline=23                 % Letzte Zeile welche ins LaTeX Dokument übernommen wird
-]{sourceCode/Eigenes-ABAP-File.abap}
 
 Es ist auch möglich, innerhalb des Listings \LaTeX{} Befehle zu verwenden. Dazu muss aber eine Escape-Sequenz angegeben werden. Das folgende Beispiel enthält ein Label, auf das dann verwiesen werden wird: Auch hier funktioniert \texttt{\textbackslash{}autoref}: \enquote{In \autoref{code:var_b} wird der Variable \texttt{b} \ldots}.
 
