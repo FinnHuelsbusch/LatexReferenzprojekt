@@ -95,14 +95,26 @@
 	\pagestyle{plain}												% Seiten-Style wird auf plain gestellt
 	\ifthenelse{\boolean{englischeVersion}}{						% Einbindung des Formel- und Abkürzungsverzeichnisses mit angepassten Titeln
 		\printacronyms[
-			name=List of Abbreviations,
-			heading=chapter*
+			template=physics, 
+			include=physics,
+			name=List of Formulas
+		]	
+		\printacronyms[
+			template=standard,
+			exclude=physics, 
+			name=List of Abbreviations
 		]	
 	}
 	{
 		\printacronyms[
-			name=Abkürzungsverzeichnis,
-			heading=chapter*
+			template=physics, 
+			include=physics, 
+			name=Formelverzeichnis
+		]
+		\printacronyms[
+			template=standard, 
+			exclude=physics, 
+			name=Abkürzungsverzeichnis
 		]
 	}
 
