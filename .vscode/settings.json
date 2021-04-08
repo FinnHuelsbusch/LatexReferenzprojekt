@@ -10,29 +10,7 @@
                 "-interaction=nonstopmode",
                 "-file-line-error",
                 "-pdf",
-                "-outdir=%OUTDIR%",
-                "-auxdir=./build",
-                "%DOC%"
-            ],
-            "env": {}
-        },
-        {
-            "name": "lualatexmk",
-            "command": "latexmk",
-            "args": [
-                "-synctex=1",
-                "-interaction=nonstopmode",
-                "-file-line-error",
-                "-lualatex",
-                "-outdir=%OUTDIR%",
-                "%DOC%"
-            ],
-            "env": {}
-        },
-        {
-            "name": "latexmk_rconly",
-            "command": "latexmk",
-            "args": [
+                "-output-directory=%OUTDIR%",
                 "%DOC%"
             ],
             "env": {}
@@ -44,8 +22,7 @@
                 "-synctex=1",
                 "-interaction=nonstopmode",
                 "-file-line-error",
-                "-aux-directory=./build",
-                "-outdir=%OUTDIR%",
+                "-output-directory=%OUTDIR%",
                 "%DOC%"
             ],
             "env": {}
@@ -54,17 +31,8 @@
             "name": "bibtex",
             "command": "bibtex",
             "args": [
-                "-output-directory=build",
+                "-output-directory=%OUTDIR%",
                 "%DOCFILE%"
-            ],
-            "env": {}
-        },
-        {
-            "name": "rnw2tex",
-            "command": "Rscript",
-            "args": [
-                "-e",
-                "knitr::opts_knit$set(concordance = TRUE); knitr::knit('%DOCFILE_EXT%')"
             ],
             "env": {}
         }
