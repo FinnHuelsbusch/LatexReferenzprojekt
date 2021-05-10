@@ -45,8 +45,9 @@
 % -- Zusätzliche Optionen 
 \setboolean{durchgehendeFussnoten}{true}							% Die Fußnoten werden nicht nach jedem Kapitel neu gezählt
 \setboolean{sperrvermerkLangeVersion}{true}							% Es soll eine lange Version des Sperrvermerks eingebunden werden
+\setboolean{anleitungDrucken}{true} 								% Die Anleitung mit Beispielen wird gedruckt.
 \setboolean{abgabeVersion}{false} 									% ToDo-Notes und andere Dokumente werden ausgeblendet. Dies ist die Abgabeversion.
-\setboolean{englischeVersion}{false}									% Verwendung der englischen Version inklusive Satz. 
+\setboolean{englischeVersion}{false}								% Verwendung der englischen Version inklusive Satz. 
 \input{content/00_LaTeX/variables/runVariables}						% Einstellungen der Variablen werden ausgeführt
 
 % -- Glossar
@@ -136,8 +137,7 @@
     \onehalfspacing													% Eineinhalbfacher Zeilenabstand
 	\sffamily                               					 	% Serifenlose Schrift verwenden. 
 	   
-	\ifthenelse{\boolean{abgabeVersion}}							% Beispielkapitel werden eingebunden
-	{}
+	\ifthenelse{\not\boolean{abgabeVersion}\and\boolean{anleitungDrucken}}							% Beispielkapitel werden eingebunden
 	{
 		\include{content/00_LaTeX/exampleProject/01_einleitung}
 		\include{content/00_LaTeX/exampleProject/02_abbildungen}
@@ -146,6 +146,7 @@
 		\include{content/00_LaTeX/exampleProject/05_quellcode}
 		\include{content/00_LaTeX/exampleProject/06_literaturHinweis}
 	}
+	{}
 	
 	% -- Einbinden des Literaturverzeichnisses 
 	\cleardoublepage												% Beendet eine Seite
