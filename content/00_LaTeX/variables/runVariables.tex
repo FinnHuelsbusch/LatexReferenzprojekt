@@ -18,3 +18,8 @@
 	\setlength {\marginparwidth }{2cm}      % Abstand für Todo Notizen
 }
 
+\ifthenelse{\not\boolean{abgabeVersion}\and\boolean{anleitungDrucken}}							
+{
+	\addbibresource{content/00_LaTeX/exampleProject/exampleSources.bib}
+}
+{}
