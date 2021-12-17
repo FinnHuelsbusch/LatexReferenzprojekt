@@ -8,15 +8,15 @@
 {}
 \ifthenelse{\boolean{abgabeVersion}}
 {
-	% Pakete Für Todo Notes
+	% Pakete Für Todo Notes ohne sie zu aus zu geben 
 	\usepackage[disable]{todonotes}
-	\setlength {\marginparwidth }{2cm}      % Abstand für Todo Notizen
 }
 {
-	% Pakete Für Todo Notes
+	% Pakete Für Todo Notes mit Ausgabe
 	\usepackage{todonotes}
-	\setlength {\marginparwidth }{2cm}      % Abstand für Todo Notizen
 }
+\setlength {\marginparwidth }{2cm}	% Abstand für Todo Notizen
+
 
 \ifthenelse{\not\boolean{abgabeVersion}\and\boolean{anleitungDrucken}}							
 {
