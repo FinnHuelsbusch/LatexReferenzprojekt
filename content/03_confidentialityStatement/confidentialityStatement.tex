@@ -1,24 +1,26 @@
 % Current file is content/03_confidentiallyStatement/confidentiallyStatement.tex
-
 \ifthenelse{\boolean{sperrvermerkDrucken}}{
+  % LTex: language=en-EN
 	\ifthenelse{\boolean{englischeVersion}}
+
 	{
-		\chapter*{Confidentially Statement}
-		The {\arbeit} on hand:
-		\begin{quote}
-			\textit{\titel}
-		\end{quote}
-		contains internal resp.\ confidential data of {\firmaName}. It is intended solely for inspection by the assigned examiner, the head of the {\studiengang} department and, if necessary, the Audit Committee of the Baden-Wuerttemberg Cooperative State University \abgabeOrt. It is strictly forbidden
-		\begin{itemize}
-			\item to distribute the content of this paper (including data, figures, tables, charts etc.) as a whole or in extracts,
-			\item to make copies or transcripts of this paper or of parts of it,
-			\item to display this paper or make it available in digital, electronic or virtual form.
-		\end{itemize}
-		Exceptional cases may be considered through permission granted in written form by the author and {\firmaName}.
-	}
-	{
-		\chapter*{Sperrvermerk}
-		\ifthenelse{\boolean{sperrvermerkLangeVersion}}
+    \chapter*{Confidentially Statement}
+    The {\arbeit} on hand:
+    \begin{quote}
+      \textit{\titel}
+    \end{quote}
+    contains internal resp.\ confidential data of {\firmaName}. It is intended solely for inspection by the assigned examiner, the head of the {\studiengang} department and, if necessary, the Audit Committee of the Baden-Wuerttemberg Cooperative State University \abgabeOrt. It is strictly forbidden
+      \begin{itemize}
+      \item to distribute the content of this paper (including data, figures, tables, charts etc.) as a whole or in extracts,
+      \item to make copies or transcripts of this paper or of parts of it,
+      \item to display this paper or make it available in digital, electronic or virtual form.
+      \end{itemize}
+    Exceptional cases may be considered through permission granted in written form by the author and {\firmaName}.
+  }
+	% LTex: language=de-DE
+  {
+    \chapter*{Sperrvermerk}
+    \ifthenelse{\boolean{sperrvermerkLangeVersion}}
 		{
 			Die vorliegende {\arbeit} mit dem Titel: 
 			\begin{quote}
